@@ -181,7 +181,7 @@ const ReminderDetailDialog = ({ reminderId, conversationId, onClose, onChanged }
     <>
       <div
         data-mobile-sheet-backdrop
-        className="fixed inset-0 z-20 flex items-center justify-center bg-slate-900/40 p-4"
+        className="fixed inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
         onClick={onClose}
       >
         <div
@@ -283,7 +283,7 @@ const ReminderDetailDialog = ({ reminderId, conversationId, onClose, onChanged }
                   type="button"
                   disabled={busy}
                   onClick={() => setRecordingOutcome(true)}
-                  className="mt-1 min-h-11 w-full rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white disabled:opacity-50"
+                  className="mt-1 min-h-11 w-full rounded-lg bg-blue-600 px-3 text-sm font-semibold text-on-accent disabled:opacity-50"
                 >
                   Record call outcome
                 </button>

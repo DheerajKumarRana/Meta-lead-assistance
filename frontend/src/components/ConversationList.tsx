@@ -336,7 +336,7 @@ const ConversationList = ({ selectedId, onSelect, initialFilters }: Props) => {
             >
               Filters
               {activeFilterCount > 0 ? (
-                <span className="rounded-full bg-key px-1.5 font-mono text-[0.625rem] text-ink">
+                <span className="rounded-full bg-key px-1.5 font-mono text-[0.625rem] text-on-accent">
                   {activeFilterCount}
                 </span>
               ) : null}
@@ -348,14 +348,18 @@ const ConversationList = ({ selectedId, onSelect, initialFilters }: Props) => {
           {/* Stays "Conversations", not "Contact sheet": this app has Contacts as a separate thing,
             so the studio's own word for a page of frames would read as the wrong noun here. The
             contact-sheet idea lives in the film-edge markers on the rows instead. */}
-          <h2 className="eyebrow">Conversations</h2>
-          <div className="flex items-center gap-3">
-            <output className="text-[0.6875rem] text-muted">{conversations.length}</output>
+          <h2 className="flex items-center gap-2 text-[1.0625rem] font-semibold tracking-[-0.02em] text-bone">
+            Conversations
+            <output className="rounded-full bg-panel-2 px-2 py-0.5 text-[0.6875rem] font-semibold text-muted">
+              {conversations.length}
+            </output>
+          </h2>
+          <div className="flex items-center gap-1">
             {canAddLead ? (
               <button
                 type="button"
                 onClick={() => setAddingLead(true)}
-                className="font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-key"
+                className="rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-key transition-colors hover:bg-key/10"
               >
                 + Lead
               </button>
@@ -363,7 +367,7 @@ const ConversationList = ({ selectedId, onSelect, initialFilters }: Props) => {
             <button
               type="button"
               onClick={load}
-              className="font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-key"
+              className="rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-key transition-colors hover:bg-key/10"
             >
               Refresh
             </button>
@@ -473,7 +477,7 @@ const ConversationList = ({ selectedId, onSelect, initialFilters }: Props) => {
                     aria-hidden="true"
                     className={`absolute inset-y-0 left-0 w-[3px] transition-all ${
                       isSelected
-                        ? 'bg-key shadow-[0_0_12px_1px_rgb(255_158_74/70%)]'
+                        ? 'bg-key'
                         : 'bg-transparent group-hover:bg-hairline'
                     }`}
                   />

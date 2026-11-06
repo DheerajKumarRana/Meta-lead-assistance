@@ -199,8 +199,8 @@ const LeadsPage = ({ onOpenLead }: Props) => {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="shrink-0 border-b border-hairline px-4 pb-3 pt-4">
-        <h1 className="font-display text-lg uppercase tracking-[0.14em] text-bone">Leads</h1>
+      <div className="shrink-0 px-4 pt-5">
+        <h1 className="text-[1.75rem] font-bold leading-tight tracking-[-0.025em] text-bone">Leads</h1>
 
         <div className="mt-3 flex items-center gap-2">
           <input
@@ -213,7 +213,9 @@ const LeadsPage = ({ onOpenLead }: Props) => {
           />
         </div>
 
-        <div className="mt-2">
+        {/* Full-bleed: the filter row brings its own padding and bottom rule, which doubles as
+            this header's divider — one line, not two. */}
+        <div className="-mx-4 mt-1">
           <ConversationFilters
             enquiryClass={enquiryClass}
             aiStatus={aiStatus}

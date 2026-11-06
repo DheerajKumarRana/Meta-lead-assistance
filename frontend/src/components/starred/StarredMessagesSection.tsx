@@ -227,7 +227,7 @@ const StarredMessagesSection = ({ onUse, onChanged }: Props) => {
         <button
           type="submit"
           disabled={!canCreate}
-          className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-on-accent disabled:cursor-not-allowed disabled:opacity-50"
         >
           {creating ? 'Saving…' : 'Save message'}
         </button>
@@ -292,7 +292,7 @@ const StarredMessagesSection = ({ onUse, onChanged }: Props) => {
                       type="button"
                       onClick={() => void handleSaveEdit(item.id)}
                       disabled={savingId === item.id}
-                      className="rounded-lg bg-blue-600 px-2.5 py-1 text-xs font-semibold text-white disabled:opacity-50"
+                      className="rounded-lg bg-blue-600 px-2.5 py-1 text-xs font-semibold text-on-accent disabled:opacity-50"
                     >
                       {savingId === item.id ? 'Saving…' : 'Save'}
                     </button>
@@ -318,7 +318,7 @@ const StarredMessagesSection = ({ onUse, onChanged }: Props) => {
                       <button
                         type="button"
                         onClick={() => onUse(item.body)}
-                        className="rounded-lg bg-blue-600 px-2.5 py-1 text-xs font-semibold text-white"
+                        className="rounded-lg bg-blue-600 px-2.5 py-1 text-xs font-semibold text-on-accent"
                       >
                         Use
                       </button>

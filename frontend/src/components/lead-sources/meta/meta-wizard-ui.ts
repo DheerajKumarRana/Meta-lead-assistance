@@ -21,7 +21,7 @@ export const labelClass = 'mb-1 block text-xs font-medium text-slate-600';
  * Facebook account is authorised). Verified in the browser: fill alone read as clickable.
  */
 export const primaryButtonClass =
-  'rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300 disabled:opacity-60';
+  'rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300 disabled:opacity-60';
 
 export const secondaryButtonClass =
   'rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50';

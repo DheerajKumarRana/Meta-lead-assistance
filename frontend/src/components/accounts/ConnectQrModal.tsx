@@ -147,7 +147,7 @@ const ConnectQrModal = ({ account, onClose, onConnected }: Props) => {
             <button
               type="submit"
               disabled={phone.trim() === ''}
-              className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+              className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
             >
               Get code
             </button>
@@ -215,7 +215,7 @@ const ConnectQrModal = ({ account, onClose, onConnected }: Props) => {
       role="dialog"
       aria-label={`Connect ${account.name}`}
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-10 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <div data-mobile-sheet className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
         <div className="mb-3 flex items-center justify-between">

@@ -235,7 +235,7 @@ const SettingsPage = () => {
               <button
                 type="submit"
                 disabled={saving}
-                className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+                className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
               >
                 {saving ? 'Saving…' : 'Save'}
               </button>
@@ -263,7 +263,7 @@ const SettingsPage = () => {
                 type="button"
                 onClick={handleClearTestData}
                 disabled={clearing}
-                className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:bg-red-300"
+                className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-red-700 disabled:bg-red-300"
               >
                 {clearing ? 'Clearing…' : 'Clear all test data'}
               </button>

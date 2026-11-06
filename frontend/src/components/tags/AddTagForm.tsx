@@ -6,7 +6,7 @@ import { type AuthValue, errorMessage } from '../types';
 
 // The cool fill, so a new tag is on-palette and still distinguishable at a glance from a new
 // stage, which defaults to the warm key.
-const DEFAULT_COLOR = '#4fd1c5';
+const DEFAULT_COLOR = '#5856d6';
 
 type Props = {
   onCreated?: () => void;
@@ -107,7 +107,7 @@ const AddTagForm = ({ onCreated }: Props) => {
       <button
         type="submit"
         disabled={saving || name.trim() === ''}
-        className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+        className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
       >
         {saving ? 'Adding…' : 'Add tag'}
       </button>

@@ -71,7 +71,7 @@ const LeadScoreSection = ({ leadScore, leadScoreBand, leadScoreSignals }: Props)
             className="absolute inset-x-0 bottom-1 h-1.5 overflow-hidden rounded-full border border-hairline bg-ink"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(90deg, rgb(255 255 255 / 8%) 0 1px, transparent 1px 10%)',
+                'repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-bone) 12%, transparent) 0 1px, transparent 1px 10%)',
             }}
           >
             {/* The exposed portion, graded cool -> warm across the scale: an underexposed frame
@@ -92,9 +92,9 @@ const LeadScoreSection = ({ leadScore, leadScoreBand, leadScoreSignals }: Props)
             className="absolute bottom-0 h-3.5 w-[3px] -translate-x-1/2 rounded-full bg-key transition-[left] duration-500 ease-out"
             style={{
               left: `${exposed * 100}%`,
-              boxShadow: `0 0 ${6 + intensity * 12}px ${intensity * 2}px rgb(255 158 74 / ${Math.round(
-                intensity * 75,
-              )}%)`,
+              boxShadow: `0 0 0 ${1 + intensity * 2}px color-mix(in srgb, var(--color-key) ${Math.round(
+                intensity * 25,
+              )}%, transparent)`,
               opacity: exposed === 0 ? 0.3 : 1,
             }}
           />
@@ -126,7 +126,7 @@ const LeadScoreSection = ({ leadScore, leadScoreBand, leadScoreSignals }: Props)
                   being readable without relying on colour. Lit type, not a lit pip. */}
               <span>
                 <span
-                  className={hit ? 'text-key [text-shadow:0_0_8px_rgb(255_158_74/70%)]' : ''}
+                  className={hit ? 'text-key' : ''}
                   aria-hidden="true"
                 >
                   {hit ? '✓' : '○'}

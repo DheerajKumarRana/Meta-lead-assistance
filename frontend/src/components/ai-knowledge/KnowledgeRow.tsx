@@ -171,7 +171,7 @@ const KnowledgeRow = ({ knowledge, canManage, onChanged }: Props) => {
             <button
               type="submit"
               disabled={busy || label.trim() === '' || content.trim() === ''}
-              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
             >
               {busy ? 'Saving…' : 'Save'}
             </button>

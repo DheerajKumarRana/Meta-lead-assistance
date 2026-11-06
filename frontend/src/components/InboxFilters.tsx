@@ -30,13 +30,13 @@ const InboxFilters = ({ stages, tags, stage, tagIds, onStageChange, onTagsChange
   };
 
   return (
-    <div className="space-y-2 border-b border-slate-200 px-4 py-2">
+    <div className="space-y-2.5 border-b border-slate-200 px-4 py-3">
       <div className="flex items-center gap-2">
         <select
           aria-label="Filter by stage"
           value={stage ?? ''}
           onChange={(event) => onStageChange(event.target.value || null)}
-          className="min-w-0 flex-1 rounded-lg border border-slate-300 px-2 py-1 text-xs text-slate-700 focus:border-blue-500 focus:outline-none"
+          className="min-w-0 flex-[1_1_9rem] rounded-lg border border-slate-300 px-2 py-1 text-xs text-slate-700 focus:border-blue-500 focus:outline-none"
         >
           <option value="">All stages</option>
           {activeStages.map((entry) => (
@@ -51,7 +51,7 @@ const InboxFilters = ({ stages, tags, stage, tagIds, onStageChange, onTagsChange
             aria-label="Filter by tag"
             value=""
             onChange={handleAddTag}
-            className="min-w-0 flex-1 rounded-lg border border-slate-300 px-2 py-1 text-xs text-slate-700 focus:border-blue-500 focus:outline-none"
+            className="min-w-0 flex-[1_1_9rem] rounded-lg border border-slate-300 px-2 py-1 text-xs text-slate-700 focus:border-blue-500 focus:outline-none"
           >
             <option value="">Add tag filter…</option>
             {availableTags.map((tag) => (

@@ -139,7 +139,7 @@ const ChangePasswordGate = () => {
         <button
           type="submit"
           disabled={saving || mismatch || tooShort || form.currentPassword === ''}
-          className="mt-4 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+          className="mt-4 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
         >
           {saving ? 'Saving…' : 'Set password and continue'}
         </button>

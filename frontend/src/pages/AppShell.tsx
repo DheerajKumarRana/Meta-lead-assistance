@@ -86,17 +86,14 @@ const NavButton = ({ active, onClick, children }: NavButtonProps) => (
     // about 11px too wide at px-3 and the menu wrapped onto a second row, costing 37px of
     // height on the smallest screen that can least afford it. From sm - and so on every
     // desktop - the padding is exactly what it was.
-    className={`relative shrink-0 whitespace-nowrap px-2 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] transition-colors sm:px-3 ${
-      active ? 'text-key' : 'text-muted hover:text-bone'
+    // Apple-style segmented pill: the active section sits on a raised white capsule.
+    className={`relative shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-[0.8125rem] leading-none font-medium tracking-[-0.01em] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] 2xl:px-4 ${
+      active
+        ? 'bg-[var(--glass-bg-thick)] font-semibold text-bone shadow-[inset_0_1px_0_var(--glass-highlight),0_1px_3px_rgb(0_0_0/12%),0_0_0_0.5px_var(--glass-stroke)]'
+        : 'text-bone-dim hover:text-bone'
     }`}
   >
     {children}
-    <span
-      aria-hidden="true"
-      className={`absolute inset-x-2 -bottom-px h-px transition-opacity ${
-        active ? 'bg-key opacity-100 shadow-[0_0_10px_1px_rgb(255_158_74/60%)]' : 'opacity-0'
-      }`}
-    />
   </button>
 );
 
@@ -130,8 +127,10 @@ const SectionScreen = ({
     ) : null}
     {/* m-nav-clearance keeps the last row clear of the fixed bottom bar. Applied to the
         scroller rather than the page so the bar overlaps nothing. */}
+    {/* Keyed by title so each section fades up into place when you switch to it. */}
     <div
-      className={`min-h-0 flex-1 overflow-y-auto ${mobile ? 'm-nav-clearance m-has-appbar' : ''}`}
+      key={title}
+      className={`page-enter min-h-0 flex-1 overflow-y-auto ${mobile ? 'm-nav-clearance m-has-appbar' : ''}`}
     >
       {children}
     </div>
@@ -592,18 +591,29 @@ const AppShell = () => {
           matched both and threw. `useIsMobileViewport` reports desktop wherever `matchMedia`
           is absent, so every existing test sees the markup it always saw. */}
       {!isMobileViewport ? (
-        <header className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 border-b border-hairline bg-ink-2/80 px-3 py-2.5 pt-[calc(0.625rem+env(safe-area-inset-top))] backdrop-blur sm:gap-x-3 sm:px-5">
-          <span className="wordmark order-1 shrink-0">Vistaar</span>
+        <header className="glass sticky top-0 z-30 flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 border-b border-hairline/70 px-3 py-2.5 pt-[calc(0.625rem+env(safe-area-inset-top))] sm:gap-x-4 sm:px-6">
+          <span className="order-1 flex shrink-0 items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="flex h-7 w-7 items-center justify-center rounded-[0.5rem] bg-linear-to-b from-[#3a3a3c] to-[#1d1d1f] text-[0.8125rem] font-bold text-[#fff] shadow-sm"
+            >
+              V
+            </span>
+            <span className="wordmark">Vistaar</span>
+          </span>
           {organization?.name ? (
-            <span className="order-1 hidden shrink-0 border-l border-hairline pl-5 font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-muted xl:inline">
+            <span className="order-1 hidden shrink-0 border-l border-hairline pl-4 text-[0.8125rem] text-muted 2xl:inline">
               {organization.name}
             </span>
           ) : null}
           <>
             <nav
               aria-label="Sections"
-              className="no-scrollbar order-3 -mx-1 flex w-full min-w-0 items-center gap-0.5 overflow-x-auto px-1 lg:order-2 lg:w-auto lg:flex-1"
+              className="no-scrollbar order-3 flex w-full min-w-0 items-center lg:order-2 lg:w-auto lg:flex-1 lg:justify-center-safe"
             >
+              {/* The track the tabs sit in: an inset glass channel, like an iOS segmented control.
+                  Scrolls sideways rather than clipping when the window is narrow. */}
+              <div className="no-scrollbar flex min-w-0 max-w-full items-center gap-1 overflow-x-auto rounded-full bg-[color-mix(in_srgb,var(--color-bone)_6%,transparent)] p-1 shadow-[inset_0_0.5px_1px_rgb(0_0_0/8%)]">
               <NavButton active={view === 'analytics'} onClick={() => setView('analytics')}>
                 Analytics
               </NavButton>
@@ -653,35 +663,34 @@ const AppShell = () => {
                   Settings
                 </NavButton>
               ) : null}
+              </div>
             </nav>
             {/* The account controls are a second header line on a phone for things used once
                 a week, so on a phone they live in the menu sheet instead. */}
             <div className="order-2 ml-auto flex shrink-0 items-center gap-3 lg:order-3">
               <a
                 href="whatsapp-admin://open"
-                className="rounded-md border border-hairline px-2.5 py-1.5 font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-bone-dim transition-colors hover:border-key/40 hover:text-key"
+                className="rounded-full bg-panel-2 px-3 py-1.5 text-[0.8125rem] font-medium text-bone-dim transition-colors hover:bg-panel-3 hover:text-bone"
               >
                 W-Staff
               </a>
               <div className="flex items-center gap-2 border-l border-hairline pl-3">
-                {/* The initials sit in the key light: the one warm point in the masthead, so "who am
-                I signed in as" is answerable at a glance without reading. */}
-                <span className="flex h-7 w-7 items-center justify-center rounded-full border border-key/40 bg-key/10 font-mono text-[0.625rem] font-semibold text-key-soft">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-b from-[#5ac8fa] to-[#0071e3] text-[0.6875rem] font-semibold text-[#fff] shadow-sm">
                   {getInitials(user?.name)}
                 </span>
-                <span className="hidden text-sm text-bone-dim md:inline">{user?.name}</span>
+                <span className="hidden text-[0.8125rem] font-medium text-bone 2xl:inline">{user?.name}</span>
               </div>
               <button
                 type="button"
                 onClick={() => setChangingPassword(true)}
-                className="font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-key"
+                className="rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-key transition-colors hover:bg-key/10"
               >
                 Password
               </button>
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-danger"
+                className="rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-danger/10 hover:text-danger"
               >
                 Sign out
               </button>

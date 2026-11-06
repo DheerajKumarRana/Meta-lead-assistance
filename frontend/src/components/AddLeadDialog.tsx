@@ -127,13 +127,35 @@ const AddLeadDialog = ({ onClose, onCreated }: Props) => {
       role="dialog"
       aria-label="Add a lead"
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-10 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <div
         data-mobile-sheet
         className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white p-6 shadow-xl"
       >
-        <h3 className="text-base font-semibold text-slate-900">Add a lead</h3>
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-[1.0625rem] font-semibold tracking-[-0.02em] text-slate-900">
+            Add a lead
+          </h3>
+          {/* iOS-style close: a small round glass button in the corner. */}
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={busy}
+            aria-label="Close"
+            title="Close"
+            className="-mr-1 -mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-900 disabled:opacity-50"
+          >
+            <svg viewBox="0 0 12 12" aria-hidden="true" className="h-3 w-3">
+              <path
+                d="M2 2l8 8M10 2l-8 8"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
         <p className="mt-1 text-xs text-slate-500">
           For someone who reached you off WhatsApp — a call, an expo, a referral.
         </p>
@@ -296,7 +318,7 @@ const AddLeadDialog = ({ onClose, onCreated }: Props) => {
             type="button"
             onClick={handleSubmit}
             disabled={busy}
-            className="rounded-lg border border-blue-600 bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+            className="rounded-lg border border-blue-600 bg-blue-600 px-3 py-1.5 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:opacity-50"
           >
             {busy ? 'Adding…' : greetNow ? 'Add and message' : 'Add lead'}
           </button>

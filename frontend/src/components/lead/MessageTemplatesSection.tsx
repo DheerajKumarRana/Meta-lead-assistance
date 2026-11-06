@@ -267,7 +267,7 @@ const MessageTemplatesSection = ({ conversationId, aiCategory, aiFacts }: Props)
                         type="button"
                         onClick={() => void handleSend(index)}
                         disabled={sendingIndex !== null || stale || option.body.trim() === ''}
-                        className="rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+                        className="rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-on-accent hover:bg-blue-700 disabled:opacity-50"
                       >
                         {sendingIndex === index ? 'Sending…' : 'Send'}
                       </button>

@@ -205,7 +205,7 @@ const AiAutomationSection = ({
                 type="button"
                 onClick={() => handleResolve('approve')}
                 disabled={busy}
-                className="rounded-md bg-emerald-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
+                className="rounded-md bg-emerald-600 px-2.5 py-1 text-xs font-medium text-on-accent hover:bg-emerald-700 disabled:opacity-50"
               >
                 Approve &amp; send
               </button>
@@ -245,7 +245,7 @@ const AiAutomationSection = ({
                 type="button"
                 onClick={() => handleResolve('edit')}
                 disabled={busy || instruction.trim() === ''}
-                className="mt-1.5 rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+                className="mt-1.5 rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-on-accent hover:bg-blue-700 disabled:opacity-50"
               >
                 Send instruction
               </button>

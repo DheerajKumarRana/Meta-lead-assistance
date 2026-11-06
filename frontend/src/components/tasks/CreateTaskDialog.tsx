@@ -159,7 +159,7 @@ const CreateTaskDialog = ({ onClose, onCreated }: Props) => {
           <button
             type="submit"
             disabled={busy}
-            className="rounded-lg bg-key px-3 py-1.5 text-sm font-semibold text-ink disabled:opacity-60"
+            className="rounded-lg bg-key px-3 py-1.5 text-sm font-semibold text-on-accent disabled:opacity-60"
           >
             {busy ? 'Adding…' : 'Add task'}
           </button>

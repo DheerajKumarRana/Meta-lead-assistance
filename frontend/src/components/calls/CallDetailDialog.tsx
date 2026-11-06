@@ -79,7 +79,7 @@ const CallDetailDialog = ({ callId, onClose }: Props) => {
   return createPortal(
     <div
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-20 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
       onClick={onClose}
     >
       <div

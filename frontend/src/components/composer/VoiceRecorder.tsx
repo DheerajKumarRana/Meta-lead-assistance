@@ -230,7 +230,7 @@ const VoiceRecorder = ({ onComplete, onCancel, disabled = false }: Props) => {
             type="button"
             onClick={send}
             disabled={disabled}
-            className="min-h-11 rounded-lg bg-key px-4 text-xs font-semibold text-ink disabled:opacity-50"
+            className="min-h-11 rounded-lg bg-key px-4 text-xs font-semibold text-on-accent disabled:opacity-50"
           >
             Send
           </button>
@@ -248,7 +248,7 @@ const VoiceRecorder = ({ onComplete, onCancel, disabled = false }: Props) => {
             <button
               type="button"
               onClick={stop}
-              className="min-h-11 rounded-lg bg-key px-4 text-xs font-semibold text-ink"
+              className="min-h-11 rounded-lg bg-key px-4 text-xs font-semibold text-on-accent"
             >
               Stop
             </button>

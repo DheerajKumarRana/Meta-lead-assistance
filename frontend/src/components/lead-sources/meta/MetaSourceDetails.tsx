@@ -114,7 +114,7 @@ const MetaSourceDetails = ({ leadSource, onClose, onChanged, onReconnect }: Prop
       role="dialog"
       aria-label={`Connection details for ${leadSource.name}`}
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-10 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <div
         data-mobile-sheet

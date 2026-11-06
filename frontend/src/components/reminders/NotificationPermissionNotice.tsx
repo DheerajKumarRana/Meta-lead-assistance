@@ -105,7 +105,7 @@ const NotificationPermissionNotice = ({
               // real one when they return, which is what updates this notice.
               void onRequestExactAlarm?.().finally(() => setOpeningSettings(false));
             }}
-            className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-ink disabled:opacity-60"
+            className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-on-accent disabled:opacity-60"
           >
             {openingSettings ? 'Opening…' : 'Allow exact alarms'}
           </button>
@@ -151,7 +151,7 @@ const NotificationPermissionNotice = ({
                 // so the resume listener re-reads the real state when they come back.
                 void onRequestClockAlarmBackground().finally(() => setOpeningOverlay(false));
               }}
-              className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-ink disabled:opacity-60"
+              className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-on-accent disabled:opacity-60"
             >
               {openingOverlay ? 'Opening…' : 'Allow Clock alarms when closed'}
             </button>
@@ -220,7 +220,7 @@ const NotificationPermissionNotice = ({
             .then((result) => setJustDenied(result === 'denied'))
             .finally(() => setBusy(false));
         }}
-        className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-ink disabled:opacity-60"
+        className="mt-2 rounded-lg bg-key px-3 py-1.5 text-xs font-semibold text-on-accent disabled:opacity-60"
       >
         {busy ? 'Asking…' : 'Enable notifications'}
       </button>

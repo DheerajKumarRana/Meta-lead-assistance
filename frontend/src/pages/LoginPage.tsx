@@ -40,84 +40,78 @@ const LoginPage = () => {
     }
   };
 
+  const inputClass =
+    'h-11 w-full rounded-xl border border-hairline bg-panel-2/60 px-3.5 text-[0.9375rem] text-bone placeholder:text-muted focus:bg-panel';
+
   return (
-    <main className="flex min-h-screen items-center justify-center p-6">
-      {/*
-       * The way into the console is lit like a set: one warm key light behind the panel, and
-       * nothing else on screen. It is the studio's own medium used as the entrance, and it is the
-       * only place in the app where the glow is allowed to be the subject.
-       */}
-      <section className="animate-rise surface relative w-full max-w-sm rounded-xl p-8">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -inset-x-8 -top-16 h-32 rounded-full bg-key/20 blur-3xl"
-        />
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden p-6">
+      {/* A soft wash of colour behind the card — the backdrop Apple uses on its sign-in pages. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/2 h-[28rem] w-[46rem] -translate-x-1/2 rounded-full bg-linear-to-r from-[#5ac8fa]/25 via-[#5856d6]/20 to-[#ff2d55]/15 blur-3xl"
+      />
 
-        <div className="relative">
-          <p className="wordmark mb-1">Vistaar</p>
-          {/* The page's heading, set as the eyebrow. It stays an h1 saying "Sign in" because that
-              is the page's actual job - the wordmark above is the brand, not the heading. */}
-          <h1 className="eyebrow mb-7">Sign in</h1>
+      <section className="animate-rise relative w-full max-w-[24rem]">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <span
+            aria-hidden="true"
+            className="mb-5 flex h-16 w-16 items-center justify-center rounded-[1.125rem] bg-linear-to-b from-[#3a3a3c] to-[#1d1d1f] text-2xl font-bold text-[#fff] shadow-lg"
+          >
+            V
+          </span>
+          <p className="text-[0.9375rem] font-medium text-muted">Vistaar Lead Console</p>
+          <h1 className="mt-1 text-[1.75rem] font-semibold tracking-[-0.025em] text-bone">Sign in</h1>
+        </div>
 
+        <div className="surface rounded-[1.375rem] p-6 shadow-xl sm:p-7">
           <form onSubmit={handleSubmit} className="space-y-4" aria-label="Sign in">
-          <div>
-            <label
-              htmlFor="organizationSlug"
-              className="mb-1 block font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted"
-            >
-              Organization
-            </label>
-            <input
-              id="organizationSlug"
-              type="text"
-              autoComplete="organization"
-              required
-              value={form.organizationSlug}
-              onChange={updateField('organizationSlug')}
-              className="w-full rounded-md border border-hairline bg-ink px-3 py-2 text-bone transition-colors placeholder:text-muted focus:border-key/50 focus:outline-none"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="mb-1 block font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted"
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              autoComplete="username"
-              required
-              value={form.email}
-              onChange={updateField('email')}
-              className="w-full rounded-md border border-hairline bg-ink px-3 py-2 text-bone transition-colors placeholder:text-muted focus:border-key/50 focus:outline-none"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="password"
-              className="mb-1 block font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-muted"
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              value={form.password}
-              onChange={updateField('password')}
-              className="w-full rounded-md border border-hairline bg-ink px-3 py-2 text-bone transition-colors placeholder:text-muted focus:border-key/50 focus:outline-none"
-            />
-          </div>
+            <div>
+              <label htmlFor="organizationSlug" className="mb-1.5 block text-[0.8125rem] font-medium text-bone-dim">
+                Organization
+              </label>
+              <input
+                id="organizationSlug"
+                type="text"
+                autoComplete="organization"
+                required
+                value={form.organizationSlug}
+                onChange={updateField('organizationSlug')}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="mb-1.5 block text-[0.8125rem] font-medium text-bone-dim">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                autoComplete="username"
+                required
+                value={form.email}
+                onChange={updateField('email')}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="mb-1.5 block text-[0.8125rem] font-medium text-bone-dim">
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                value={form.password}
+                onChange={updateField('password')}
+                className={inputClass}
+              />
+            </div>
 
             {error ? (
               <p
                 role="alert"
-                className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger"
+                className="rounded-xl bg-danger/10 px-3.5 py-2.5 text-[0.8125rem] text-danger"
               >
                 {error}
               </p>
@@ -126,7 +120,7 @@ const LoginPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="btn-key w-full rounded-md px-4 py-2.5 text-sm uppercase tracking-[0.08em] transition disabled:cursor-not-allowed"
+              className="btn-key mt-2 h-11 w-full rounded-xl text-[0.9375rem]"
             >
               {submitting ? 'Signing in…' : 'Sign in'}
             </button>

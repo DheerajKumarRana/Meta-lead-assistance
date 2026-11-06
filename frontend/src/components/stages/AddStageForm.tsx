@@ -7,7 +7,7 @@ import { type AuthValue, errorMessage } from '../types';
 // Starts on the key light rather than a generic blue: the swatch is the one control whose value
 // is a literal colour, so an off-palette default is the one thing on screen that cannot inherit
 // the theme.
-const DEFAULT_COLOR = '#ff9e4a';
+const DEFAULT_COLOR = '#0071e3';
 
 type Props = {
   onCreated?: () => void;
@@ -86,7 +86,7 @@ const AddStageForm = ({ onCreated }: Props) => {
       <button
         type="submit"
         disabled={saving || label.trim() === ''}
-        className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+        className="mt-3 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
       >
         {saving ? 'Adding…' : 'Add stage'}
       </button>

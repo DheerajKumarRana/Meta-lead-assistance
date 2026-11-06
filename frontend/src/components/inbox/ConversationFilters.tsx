@@ -191,7 +191,7 @@ const ConversationFilters = ({
   return (
     // Lives inside whatever the parent decided is visible - on a narrow screen that is the
     // collapsible Filters area, so these two selects cost nothing until they are asked for.
-    <div className="space-y-2 border-b border-hairline px-4 py-2">
+    <div className="space-y-2.5 border-b border-hairline px-4 py-3">
       <div className="flex flex-wrap items-center gap-2">
         <select
           aria-label="Filter by enquiry type"
@@ -199,7 +199,7 @@ const ConversationFilters = ({
           onChange={(event) =>
             onEnquiryClassChange((event.target.value || null) as EnquiryClass | null)
           }
-          className="min-w-0 flex-1 rounded-lg border border-hairline bg-panel px-2 py-1 text-xs text-bone focus:border-key/50 focus:outline-none"
+          className="min-w-0 flex-[1_1_9rem] rounded-lg border border-hairline bg-panel px-2 py-1 text-xs text-bone focus:border-key/50 focus:outline-none"
         >
           <option value="">All enquiry types</option>
           {ENQUIRY_CLASS_OPTIONS.map((option) => (
@@ -215,7 +215,7 @@ const ConversationFilters = ({
           onChange={(event) =>
             onAiStatusChange((event.target.value || null) as AiResponseStatus | null)
           }
-          className="min-w-0 flex-1 rounded-lg border border-hairline bg-panel px-2 py-1 text-xs text-bone focus:border-key/50 focus:outline-none"
+          className="min-w-0 flex-[1_1_9rem] rounded-lg border border-hairline bg-panel px-2 py-1 text-xs text-bone focus:border-key/50 focus:outline-none"
         >
           <option value="">Any AI response</option>
           {AI_STATUS_OPTIONS.map((option) => (

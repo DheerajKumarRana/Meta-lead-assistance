@@ -35,7 +35,7 @@ const RemoveAccountDialog = ({ account, busy, onCancel, onConfirm }: Props) => {
       role="dialog"
       aria-label={`Remove ${account.name}`}
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-10 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <div data-mobile-sheet className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
         <h3 className="text-base font-semibold text-slate-900">Remove {account.name}?</h3>
@@ -78,7 +78,7 @@ const RemoveAccountDialog = ({ account, busy, onCancel, onConfirm }: Props) => {
             type="button"
             onClick={() => onConfirm(purgeHistory)}
             disabled={busy}
-            className="rounded-lg border border-red-600 bg-red-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-50"
+            className="rounded-lg border border-red-600 bg-red-600 px-3 py-1.5 text-sm font-semibold text-on-accent hover:bg-red-700 disabled:opacity-50"
           >
             {busy
               ? purgeHistory

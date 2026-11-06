@@ -22,9 +22,10 @@ type Props = {
  * in twelve men who cannot reliably separate the red from the green.
  */
 const ToggleSwitch = ({ checked, onChange, label, disabled = false, size = 'md' }: Props) => {
-  const track = size === 'sm' ? 'h-4 w-7' : 'h-5 w-9';
-  const knob = size === 'sm' ? 'h-3 w-3' : 'h-4 w-4';
-  const travel = size === 'sm' ? 'translate-x-3' : 'translate-x-4';
+  // iOS proportions: a pill track with a white knob that slides on a spring.
+  const track = size === 'sm' ? 'h-5 w-8' : 'h-6 w-10';
+  const knob = size === 'sm' ? 'h-4 w-4' : 'h-5 w-5';
+  const travel = size === 'sm' ? 'translate-x-3.5' : 'translate-x-[1.125rem]';
 
   return (
     <button
@@ -40,15 +41,13 @@ const ToggleSwitch = ({ checked, onChange, label, disabled = false, size = 'md' 
         event.stopPropagation();
         onChange(!checked);
       }}
-      className={`relative inline-flex shrink-0 items-center rounded-full border transition-colors disabled:opacity-40 ${track} ${
-        checked
-          ? 'border-fill/50 bg-fill/30 shadow-[0_0_8px_-2px_rgb(79_209_197/60%)]'
-          : 'border-hairline bg-panel-2'
+      className={`relative inline-flex shrink-0 items-center rounded-full transition-colors duration-300 disabled:opacity-40 ${track} ${
+        checked ? 'bg-green-500' : 'bg-panel-3'
       }`}
     >
       <span
         aria-hidden="true"
-        className={`inline-block transform rounded-full bg-bone transition-transform ${knob} ${
+        className={`inline-block transform rounded-full bg-[#fff] shadow-[0_2px_4px_rgb(0_0_0/20%),0_0_1px_rgb(0_0_0/20%)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${knob} ${
           checked ? travel : 'translate-x-0.5'
         }`}
       />

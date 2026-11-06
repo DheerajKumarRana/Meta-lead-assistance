@@ -94,7 +94,7 @@ const ChangePasswordDialog = ({ onClose }: Props) => {
         role="dialog"
         aria-label="Password changed"
         data-mobile-sheet-backdrop
-        className="fixed inset-0 z-20 flex items-center justify-center bg-slate-900/40 p-4"
+        className="fixed inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
       >
         <div data-mobile-sheet className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
           <h3 className="text-base font-semibold text-slate-900">Password changed</h3>
@@ -105,7 +105,7 @@ const ChangePasswordDialog = ({ onClose }: Props) => {
           <button
             type="button"
             onClick={onClose}
-            className="mt-5 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+            className="mt-5 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700"
           >
             Done
           </button>
@@ -119,7 +119,7 @@ const ChangePasswordDialog = ({ onClose }: Props) => {
       role="dialog"
       aria-label="Change your password"
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-20 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <form
         onSubmit={handleSubmit}
@@ -206,7 +206,7 @@ const ChangePasswordDialog = ({ onClose }: Props) => {
           <button
             type="submit"
             disabled={saving || mismatch || tooShort || reused || form.currentPassword === ''}
-            className="rounded-lg border border-blue-600 bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+            className="rounded-lg border border-blue-600 bg-blue-600 px-3 py-1.5 text-sm font-semibold text-on-accent hover:bg-blue-700 disabled:opacity-50"
           >
             {saving ? 'Saving…' : 'Change password'}
           </button>

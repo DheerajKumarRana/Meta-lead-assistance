@@ -10,7 +10,7 @@ const UnreadBadge = ({ count }: Props) => {
   return (
     <span
       aria-label={`${count} unread`}
-      className="glow-fill inline-flex min-w-5 items-center justify-center rounded-full bg-fill px-1.5 font-mono text-[0.625rem] font-semibold text-ink"
+      className="glow-fill inline-flex min-w-5 items-center justify-center rounded-full bg-fill px-1.5 font-mono text-[0.625rem] font-semibold text-on-accent"
     >
       {count > 99 ? '99+' : count}
     </span>

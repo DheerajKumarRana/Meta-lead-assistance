@@ -388,7 +388,7 @@ const TasksPage = ({ onOpenTask }: Props) => {
         type="button"
         onClick={() => setCreating(true)}
         aria-label="New task"
-        className="fixed bottom-20 right-5 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-key text-2xl font-light text-ink shadow-lg sm:bottom-8"
+        className="fixed bottom-20 right-5 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-key text-2xl font-light text-on-accent shadow-lg sm:bottom-8"
       >
         +
       </button>

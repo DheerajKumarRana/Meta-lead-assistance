@@ -21,7 +21,7 @@ const EmptyState = ({ title, description, compact = false }: Props) => (
       className={
         compact
           ? 'text-sm font-medium text-bone-dim'
-          : 'font-display text-xl uppercase tracking-[0.14em] text-bone-dim'
+          : 'text-[1.1875rem] font-semibold tracking-[-0.02em] text-bone'
       }
     >
       {title}

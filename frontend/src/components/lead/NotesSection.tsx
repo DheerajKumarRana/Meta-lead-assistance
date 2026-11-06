@@ -101,7 +101,7 @@ const NotesSection = ({ conversationId }: Props) => {
           <button
             type="submit"
             disabled={saving || body.trim() === ''}
-            className="rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300"
+            className="rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300"
           >
             {saving ? 'Adding…' : 'Add'}
           </button>

@@ -105,7 +105,7 @@ const LeadSourcesPage = () => {
                   setWizardAtConnect(false);
                   setWizardOpen(true);
                 }}
-                className="shrink-0 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+                className="shrink-0 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-on-accent hover:bg-blue-700"
               >
                 Connect Facebook
               </button>

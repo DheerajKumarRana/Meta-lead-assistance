@@ -163,7 +163,7 @@ const AiProposalSection = ({ conversationId, displayName }: Props) => {
               type="button"
               onClick={handleDownload}
               disabled={busy}
-              className="rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-md bg-blue-600 px-2.5 py-1 text-xs font-medium text-on-accent hover:bg-blue-700 disabled:opacity-50"
             >
               Download
             </button>

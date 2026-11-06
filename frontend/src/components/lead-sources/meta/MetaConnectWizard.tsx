@@ -497,7 +497,7 @@ const MetaConnectWizard = ({
       role="dialog"
       aria-label="Connect a Facebook lead form"
       data-mobile-sheet-backdrop
-      className="fixed inset-0 z-10 flex items-center justify-center bg-slate-900/40 p-4"
+      className="fixed inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
     >
       <div
         data-mobile-sheet
@@ -532,7 +532,7 @@ const MetaConnectWizard = ({
                     aria-current={active ? 'step' : undefined}
                     className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
                       active
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-blue-600 text-on-accent'
                         : done
                           ? 'bg-blue-50 text-blue-700'
                           : 'bg-slate-100 text-slate-500'

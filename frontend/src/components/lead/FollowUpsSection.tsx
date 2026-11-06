@@ -381,7 +381,7 @@ const FollowUpsSection = ({
           <button
             type="submit"
             disabled={saving || !form.dueAt}
-            className="min-h-11 w-full rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700 disabled:bg-blue-300 sm:min-h-0"
+            className="min-h-11 w-full rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-on-accent hover:bg-blue-700 disabled:bg-blue-300 sm:min-h-0"
           >
             {saving ? 'Adding…' : 'Add reminder'}
           </button>

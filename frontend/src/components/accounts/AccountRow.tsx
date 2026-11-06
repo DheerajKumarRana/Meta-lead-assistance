@@ -30,7 +30,7 @@ type ActionButtonProps = {
 const ActionButton = ({ children, onClick, tone = 'default', disabled }: ActionButtonProps) => {
   const tones: Record<ActionTone, string> = {
     default: 'border-slate-300 text-slate-700 hover:bg-slate-50',
-    primary: 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700',
+    primary: 'border-blue-600 bg-blue-600 text-on-accent hover:bg-blue-700',
     danger: 'border-slate-300 text-red-600 hover:bg-red-50',
   };
   return (
